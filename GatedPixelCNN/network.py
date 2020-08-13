@@ -132,7 +132,7 @@ class Network:
                                      self.target_pixels: images[1]
                                   })
  
-    pred_prob = target[np.array(self.index_range)[:,np.newaxis], indexes]    
+    pred_prob = target[self.index_range, indexes]    
 
     # sample = self.generate_samples(sess,  images[0])
     # # print t

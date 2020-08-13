@@ -72,7 +72,8 @@ class PixelBonus(object):
 
     def bonus(self, obs, action, t, num_actions):
         step = t
-        frame = resize(obs, (self.flags.img_height, self.flags.img_width), order=1)
+        frame = cv2.cvtColor(obs, cv2.COLOR_RGB2GRAY)
+        frame = resize(frame, (self.flags.img_height, self.flags.img_width), order=1)
         last_frame = process_density_images(frame)
         density_input = process_density_input(last_frame)
 
